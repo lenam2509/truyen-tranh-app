@@ -40,7 +40,7 @@ export default async function page({
           {item.comic_name}
         </h1>
         {/* <h2 className="text-red-500 text-xl">{item.chapter_name}</h2> */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           {item.chapter_image.map((image, index) => (
             <Image
               width={500}
@@ -48,7 +48,7 @@ export default async function page({
               key={index}
               src={`https://sv1.otruyencdn.com/${item.chapter_path}/${image.image_file}`}
               alt={item.chapter_name}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
           ))}
