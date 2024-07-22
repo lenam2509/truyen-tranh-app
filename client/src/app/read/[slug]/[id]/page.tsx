@@ -43,6 +43,7 @@ export default async function page({
         <div className="flex flex-col">
           {item.chapter_image.map((image, index) => (
             <Image
+              quality={100}
               width={500}
               height={500}
               key={index}
