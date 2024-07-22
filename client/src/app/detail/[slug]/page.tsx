@@ -2,7 +2,7 @@ import { Manga } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-export const fetchDetail = async (slug: string) => {
+const fetchDetail = async (slug: string) => {
   const url = "https://otruyenapi.com/v1/api/truyen-tranh";
   const res = await fetch(`${url}/${slug}`);
   const data = await res.json();

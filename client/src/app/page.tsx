@@ -1,6 +1,4 @@
 import ComingSoon from "@/components/ComingSoon";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import HeroSection from "@/components/Hero";
 import HoanThanh from "@/components/HoanThanh";
 import NewestManga from "@/components/NewestManga";
