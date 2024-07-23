@@ -70,13 +70,13 @@ export default function NewestManga() {
             {truyen.map((item) => (
               <CarouselItem
                 key={item._id}
-                className=" md:basis-[30%] lg:basis-1/6 md:p-2 h-fit  mx-4"
+                className="basis-[200px] md:basis-[30%] lg:basis-1/6 md:p-2 h-fit  mx-4"
               >
                 <Link
                   href={`/detail/${item.slug}`}
                   className="flex flex-col items-center "
                 >
-                  <div className="bg-black max-w-[200px] h-[300px]">
+                  <div className="bg-black w-full md:h-[300px]">
                     <Image
                       src={`https://img.otruyenapi.com/uploads/comics/${item.thumb_url}`}
                       alt={item.name}

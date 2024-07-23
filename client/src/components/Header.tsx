@@ -14,14 +14,14 @@ export default function Header() {
   const pathName = usePathname();
   const Links = [
     { name: "Trang chủ", url: "/" },
-    { name: "Tất cả", url: "/all" },
-    { name: "Manga", url: "/manga" },
-    { name: "Manhwa", url: "/manhwa" },
-    { name: "Top Truyện", url: "/top" },
+    { name: "Truyện mới", url: "/truyen-moi" },
+    { name: "Sắp ra mắt", url: "/sap-ra-mat" },
+    { name: "Đang phát hành", url: "/dang-phat-hanh" },
+    { name: "Hoàn Thành", url: "/hoan-thanh" },
   ];
   return (
     <header className="bg-[rgb(15,20,22)] text-white">
-      <div className="container mx-auto py-4 flex items-center justify-between">
+      <div className="container max-w-screen-2xl  py-4 flex items-center justify-between">
         <Link className="w-[100px] md:w-[150px]" href={"/"}>
           <Image
             src={"/logo.png"}
@@ -32,7 +32,7 @@ export default function Header() {
           />
         </Link>
         {/* links */}
-        <div className="items-center gap-5 hidden lg:flex">
+        <div className="items-center gap-5 hidden xl:flex">
           {Links.map((link, index) => (
             <Link
               key={index}
@@ -80,7 +80,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6 lg:hidden cursor-pointer"
+              className="size-6 xl:hidden cursor-pointer"
             >
               <path
                 strokeLinecap="round"
@@ -113,7 +113,7 @@ export default function Header() {
         </Sheet>
 
         {/* login */}
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link
             href={"/login"}
             className="bg-red-500 font-bold text-white px-3 py-2 rounded"

@@ -43,14 +43,12 @@ export default async function page({
         <div className="flex flex-col">
           {item.chapter_image.map((image, index) => (
             <Image
-              quality={100}
               width={500}
               height={500}
               key={index}
               src={`https://sv1.otruyencdn.com/${item.chapter_path}/${image.image_file}`}
-              alt={item.chapter_name}
+              alt={item.chapter_name+`ảnh lỗi thì f5`}
               className="w-full h-full object-cover"
-              loading="lazy"
             />
           ))}
         </div>
