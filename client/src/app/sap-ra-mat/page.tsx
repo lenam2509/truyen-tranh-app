@@ -5,7 +5,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Manga } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { revalidate } from "../sap-ra-mat/page";
+
+export const revalidate = 10;
 
 type tag = {
   _id: number;
@@ -24,7 +25,9 @@ export default async function page({
   searchParams: TsearchParams;
 }) {
   const url = "https://otruyenapi.com/v1/api";
+
   const tagsData = await fetch(url + "/the-loai").then((res) => res.json());
+
   const truyensByTagsData = await fetch(
     url +
       "/the-loai/" +
@@ -33,11 +36,14 @@ export default async function page({
       Number(searchParams.page || 1),
     { next: { revalidate: revalidate } }
   ).then((res) => res.json());
+
   const truyensData = await fetch(
-    url + "/danh-sach/truyen-moi/" + "?page=" + Number(searchParams.page || 1),
+    url + "/danh-sach/sap-ra-mat/" + "?page=" + Number(searchParams.page || 1),
     { next: { revalidate: revalidate } }
   ).then((res) => res.json());
+
   const tags = tagsData.data.items;
+
   let truyens;
   let params;
 
@@ -60,28 +66,27 @@ export default async function page({
   return (
     <div className="container py-4 mx-auto bg-[rgb(15,20,22)] min-h-screen text-white flex flex-col gap-4">
       <span className="font-bold text-2xl">
-        Thể loại:
-        {searchParams.slug === "truyen-moi"
-          ? " truyện mới"
+        Thể loại:{" "}
+        {searchParams.slug === "sap-ra-mat"
+          ? " sắp ra mắt"
           : "" || searchParams.slug
           ? ` ${searchParams.slug}`
-          : " truyện mới"}
+          : " sắp ra mắt"}
       </span>
       <ScrollArea className="h-[200px]  rounded-md border p-4 ">
         <div className="flex flex-wrap">
           <Button
             asChild
             className={`p-2 bg-red-500 m-2 font-bold rounded-lg w-fit text-white${
-              searchParams.slug === "truyen-moi" ? " bg-blue-600" : ""
-            }
-             ${!searchParams.slug ? " bg-blue-600" : ""}`}
+              searchParams.slug == `sap-ra-mat` ? " bg-blue-600" : ""
+            }${!searchParams.slug ? " bg-blue-600" : ""}`}
           >
             <Link
               href={{
-                query: { slug: "truyen-moi" },
+                query: { slug: "sap-ra-mat" },
               }}
             >
-              truyện mới
+              sắp ra mắt
             </Link>
           </Button>
           {tags.map((tag: tag) => (

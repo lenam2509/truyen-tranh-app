@@ -24,7 +24,9 @@ export default async function page({
   searchParams: TsearchParams;
 }) {
   const url = "https://otruyenapi.com/v1/api";
+
   const tagsData = await fetch(url + "/the-loai").then((res) => res.json());
+
   const truyensByTagsData = await fetch(
     url +
       "/the-loai/" +
@@ -33,11 +35,17 @@ export default async function page({
       Number(searchParams.page || 1),
     { next: { revalidate: revalidate } }
   ).then((res) => res.json());
+
   const truyensData = await fetch(
-    url + "/danh-sach/truyen-moi/" + "?page=" + Number(searchParams.page || 1),
+    url +
+      "/danh-sach/dang-phat-hanh/" +
+      "?page=" +
+      Number(searchParams.page || 1),
     { next: { revalidate: revalidate } }
   ).then((res) => res.json());
+
   const tags = tagsData.data.items;
+
   let truyens;
   let params;
 
@@ -61,27 +69,26 @@ export default async function page({
     <div className="container py-4 mx-auto bg-[rgb(15,20,22)] min-h-screen text-white flex flex-col gap-4">
       <span className="font-bold text-2xl">
         Thể loại:
-        {searchParams.slug === "truyen-moi"
-          ? " truyện mới"
+        {searchParams.slug === "dang-phat-hanh"
+          ? " đang phát hành"
           : "" || searchParams.slug
           ? ` ${searchParams.slug}`
-          : " truyện mới"}
+          : " đang phát hành"}
       </span>
       <ScrollArea className="h-[200px]  rounded-md border p-4 ">
         <div className="flex flex-wrap">
           <Button
             asChild
             className={`p-2 bg-red-500 m-2 font-bold rounded-lg w-fit text-white${
-              searchParams.slug === "truyen-moi" ? " bg-blue-600" : ""
-            }
-             ${!searchParams.slug ? " bg-blue-600" : ""}`}
+              searchParams.slug === "dang-phat-hanh" ? " bg-blue-600" : ""
+            }${!searchParams.slug ? " bg-blue-600" : ""}`}
           >
             <Link
               href={{
-                query: { slug: "truyen-moi" },
+                query: { slug: "dang-phat-hanh" },
               }}
             >
-              truyện mới
+              đang phát hành
             </Link>
           </Button>
           {tags.map((tag: tag) => (
