@@ -33,7 +33,7 @@ export default function ComingSoon() {
     <div className="mt-4">
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-white font-bold md:text-2xl">Truyện sắp ra mắt</h2>
-        <Link href={"/"} className="text-white">
+        <Link href={"/sap-ra-mat"} className="text-white">
           Xem tất cả &gt;
         </Link>
       </div>

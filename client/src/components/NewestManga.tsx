@@ -37,7 +37,7 @@ export default function NewestManga() {
         <h2 className="text-white font-bold md:text-2xl">
           Truyện mới cập nhật
         </h2>
-        <Link href={"/"} className="text-white">
+        <Link href={"/truyen-moi"} className="text-white">
           Xem tất cả &gt;
         </Link>
       </div>

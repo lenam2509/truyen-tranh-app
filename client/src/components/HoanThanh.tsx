@@ -36,7 +36,7 @@ export default function HoanThanh() {
         <h2 className="text-white font-bold md:text-2xl">
           Truyện đã hoàn thành
         </h2>
-        <Link href={"/"} className="text-white">
+        <Link href={"/hoan-thanh"} className="text-white">
           Xem tất cả &gt;
         </Link>
       </div>

@@ -36,7 +36,7 @@ export default function DangPhatHanh() {
         <h2 className="text-white font-bold md:text-2xl">
           Truyện đang phát hành
         </h2>
-        <Link href={"/"} className="text-white">
+        <Link href={"/dang-phat-hanh"} className="text-white">
           Xem tất cả &gt;
         </Link>
       </div>

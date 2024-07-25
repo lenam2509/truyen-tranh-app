@@ -94,7 +94,7 @@ export default function Header() {
         {/* login */}
         <div className="hidden xl:block">
           <Link
-            href={"/login"}
+            href={"/"}
             className="bg-red-500 font-bold text-white px-3 py-2 rounded"
           >
             Đăng nhập
