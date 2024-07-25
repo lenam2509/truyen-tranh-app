@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
+import SearchBar from "./SearchBar";
 
 export default function Header() {
   const pathName = usePathname();
@@ -48,29 +49,7 @@ export default function Header() {
           ))}
         </div>
         {/* search */}
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Tìm kiếm truyện"
-            className="bg-white text-black rounded p-2 outline-none w-[150px]  md:w-[300px] xl:w-[400px]"
-          />
-          <button className="absolute right-0 top-0 bottom-0 text-black px-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-              />
-            </svg>
-          </button>
-        </div>
+        <SearchBar />
         {/* menu for mobile */}
         <Sheet>
           <SheetTrigger asChild>

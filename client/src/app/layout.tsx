@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProcessBarProvider from "@/components/ProcessBarProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <main className="min-h-screen bg-[rgb(38,50,56)] py-4">{children}</main>
+        <ProcessBarProvider>
+          <main className="min-h-screen bg-[rgb(38,50,56)] py-4">
+            {children}
+          </main>
+        </ProcessBarProvider>
         <Footer />
       </body>
     </html>
