@@ -2,6 +2,7 @@
 const nextConfig = {
     reactStrictMode: false,
     images: {
+        unoptimized: true,
         // domains: ['img.otruyenapi.com', 'sv1.otruyencdn.com'],
         remotePatterns: [
             {
